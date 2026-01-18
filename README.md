@@ -28,6 +28,89 @@ driven by a **periodic Floquet bath schedule**, with optional **SPSA (GRAPE-ish)
   - Choi diagnostics for local channels (λ_min, purity)
   - Transmon-ish circuit proxies: ω01(t), EJ/EC, leakage-risk proxy, “subspace fidelity” proxy
 
+    You can paste this section under “CLI Reference”.
+
+Modes & timebase
+
+--mode {single,lattice}
+
+--q_tmax, --dt
+
+Output / rendering
+
+--outdir
+
+FPS controls: --fps, --fps_out, --render_fps, --mp4_fps
+
+Render behavior: --render_skip, --fast_render, --quality {fast,balanced,high,ultra}, --dpi, --viz_scale, --height_boost
+
+TransmonRealDeal
+
+Frames: --render_frames / --no_render_frames, --resume_frames / --no_resume_frames, --keep_frames
+
+Plot data exports: --export_plot_data / --no_export_plot_data, --export_wigner_snapshots
+
+MP4 export: --no_mp4, --mp4_crf, --mp4_preset, --mp4_auto_upsample, --mp4_interp
+
+Wigner (optional visuals)
+
+--no_wigner, --wigner_every, --wigner_N_qubit, --wigner_N_collective, --wigner_smooth_alpha
+
+Drive / transmon‑proxy knobs
+
+--Omega0, --Omega_drive, --target_omega_over_alpha
+
+EC/flux: --transmon_EC, --transmon_flux_amp, --transmon_flux_use_bath / --transmon_flux_no_bath
+
+EJ/EC window clamp: --transmon_EJEC_min, --transmon_EJEC_max, --transmon_EJEC_enforce / --transmon_no_EJEC_enforce
+
+Leakage guard:
+--transmon_leak_guard / --transmon_no_leak_guard,
+--transmon_fid_floor, --transmon_leak_guard_scale, --transmon_drive_headroom,
+--transmon_leak_kappa, --transmon_leak_guard_mode {soft,hard}
+
+Bath schedule / thermal pulses
+
+Enable/disable: --bath_enable / --bath_disable
+
+Shape/period: --bath_waveform {square,sine,triangle,sawtooth,gaussian}, --bath_period, --bath_duty
+
+Phase: --bath_global_phase, --bath_phase_per_qubit
+
+Mod depth: --bath_amp_gamma, --bath_amp_drive, plus overall scales --bath_gamma_scale, --bath_drive_scale
+
+Temperature endpoints: --T_bath_base_mK, --T_bath_hot_mK
+
+q‑datagram quantum memory register
+
+--qmem_enable
+
+--qmem_nmem, --qmem_theta_in, --qmem_theta_out
+
+--qmem_inject_every, --qmem_update_every, --qmem_mem_init {zero,maxmix}
+
+Couplings + entanglement pump
+
+--J_cap, --J_ind
+
+--ent_boost, --ent_pulse_amp
+
+Hotspots/leak view: --hotspot_thr, --leak_warn, --leak_warn_frac, --leak_plot_mode, --leak_plot_scale
+
+Choi traces: --choi_per_qubit
+
+Disable overlays: --no_hotspot_trails, --no_hotspot_flares, --no_hotspot_tl
+
+--ent_tests (unit tests then exit)
+
+Daemon optimization
+
+--daemon, --daemon_iters, --daemon_pulses, --daemon_seed
+
+Sharing (optional)
+
+--ngrok / --enable_ngrok, --ngrok_authtoken / --ngrok_token, --ngrok_port
+
 ---
 
 ## Install
